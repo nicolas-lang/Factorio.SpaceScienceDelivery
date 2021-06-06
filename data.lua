@@ -1,1 +1,1 @@
-log("data")
+require("data.register_withcannon")

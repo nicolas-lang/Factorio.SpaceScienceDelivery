@@ -1,1 +1,1 @@
-log("data-final-fixes")
+require("data.register_recipes")

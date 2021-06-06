@@ -1,13 +1,16 @@
 {
-	"name": "nco-ModTemplate",
+	"name": "nco-SpaceScienceDelivery",
 	"version": "0.0.1",
-	"title": "Mod Template",
+	"title": "Space Science Delivery",
 	"author": "Karoschl",
 	"contact": "",
 	"homepage": "",
-	"description": "Basic Mod Template, check github for details",
+	"description": "Extends the Space Exploration Delivery-Cannon recipes with a way to deliver items of the category 'Tool', this covers for example Science Packs.",
 	"factorio_version": "1.1",
 	"dependencies": [
-		"base >= 1.0"
+		"base >= 1.1",
+		"space-exploration >= 0.3.82",
+		"space-exploration-postprocess >= 0.2.4",
+		"(?) Krastorio2 >= 0.9.9"
 	]
 }
