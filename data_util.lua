@@ -1,3 +1,4 @@
+local data = _G.data
 local data_util = {}
 --=================================================================================================
 function data_util.has_value (tab, val)
@@ -10,7 +11,7 @@ function data_util.has_value (tab, val)
 end
 --=================================================================================================
 function data_util.getTechnologyForRecipe(recipe_name)
-	for name, technology in pairs(data.raw.technology) do
+	for _, technology in pairs(data.raw.technology) do
 		if (technology.enabled == true or technology.enabled == nil) and technology.effects then
 			for _, effect in pairs(technology.effects) do
 				if effect.type == "unlock-recipe" and effect.recipe == recipe_name then

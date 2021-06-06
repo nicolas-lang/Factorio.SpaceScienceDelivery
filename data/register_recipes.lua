@@ -1,7 +1,7 @@
 ﻿local data = _G.data
-local mods = _G.mods
 local data_util = require("data_util")
 --=================================================================================================
+local itemBoxName
 for _, item in pairs (data.raw["tool"]) do
 	local txt = item.name
 	local recipe = data_util.getRecipe(item.name)
