@@ -1,22 +1,10 @@
-# Factorio.ModTemplate
-Template for automated mod deployment using Github Actions when a tagged commit is pushed
+# Factorio: Space Science Delivery
+When playing Factorio with Earendel's Space Exploration mod, I never liked the micromanagement of sending rockets with the right ammount of science packs to space.
+This mod simplifies the process by allowing science packs to be sent by a SE-Selivery-Cannon at the cost of some additional resources.
 
-## Inputs (Github secrets)
-
-### `factorio_user`
-
-**Required** User that will be used to authenticate to the Factorio mod-portal.
-
-### `factorio_password`
-
-**Required** Password that will be used to authenticate to the Factorio mod-portal.
+Feel free to review and improve my code.
 
 ## Acknowledgements
 
-Actions based on:
-- [Roang-zero1 Actions](https://github.com/Roang-zero1)
-
-Which are  based on:
-- [Nexelas Mods](https://github.com/Nexela)
-- [GitHub Action to automatically publish to the Factorio mod portal](https://github.com/shanemadden/factorio-mod-portal-publish)
-- Shane Madden (Nymbia)
+- [Github actions based on Roang-zero1 Actions](https://github.com/Roang-zero1)
+- [Space Exploration is a mod by Earendel] (https://mods.factorio.com/mod/space-exploration)
