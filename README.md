@@ -7,4 +7,4 @@ Feel free to review and improve my code.
 ## Acknowledgements
 
 - [Github actions based on Roang-zero1 Actions](https://github.com/Roang-zero1)
-- [Space Exploration is a mod by Earendel] (https://mods.factorio.com/mod/space-exploration)
+- [Space Exploration is a mod by Earendel](https://mods.factorio.com/mod/space-exploration)
