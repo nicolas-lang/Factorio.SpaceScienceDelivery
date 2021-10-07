@@ -21,7 +21,7 @@ for _, item in pairs (data.raw["tool"]) do
 					,order = item.order or ("zzz[" .. item.name .. "]")
 				}
 				--ensure the item has a order tag on the subgroup as SE requires this
-				local item_subgroup = data.raw["item-subgroup"][item.subgroup]
+				local item_subgroup = data.raw["item-subgroup"][newItem.subgroup]
 				item_subgroup.order = item_subgroup.order or ("zzz[" .. item_subgroup.name .. "]")
 				--ensure the item also has a order tag on the group
 				local item_group = data.raw["item-group"][item_subgroup.group]
