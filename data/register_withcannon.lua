@@ -17,9 +17,15 @@ for _, item in pairs (data.raw["tool"]) do
 					,icon = item.icon or item.icons[0]
 					,icon_size = item.icon_size
 					,stack_size = 200
-					,subgroup = item.subgroup
-					,order=item.order
+					,subgroup = item.subgroup or "other"
+					,order = item.order or ("zzz[" .. item.name .. "]")
 				}
+				--ensure the item has a order tag on the subgroup as SE requires this
+				local item_subgroup = data.raw["item-subgroup"][item.subgroup]
+				item_subgroup.order = item_subgroup.order or ("zzz[" .. item_subgroup.name .. "]")
+				--ensure the item also has a order tag on the group
+				local item_group = data.raw["item-group"][item_subgroup.group]
+				item_group.order = item_group.order or ("zzz[" .. item_group.name .. "]")
 				data:extend({newItem})
 				se_delivery_cannon_recipes[newItem.name] = {name=newItem.name,type="item"}
 			end
