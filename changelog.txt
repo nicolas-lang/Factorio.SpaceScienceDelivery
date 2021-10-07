@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+  Bugfixes:
+    - The mod ensure now that a item prototype marked for delivery has a order tag on item, group and subgroup as SE requires this.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
   Other:
     - Added mod thumbnail
