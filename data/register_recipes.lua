@@ -5,7 +5,8 @@ local itemBoxName
 for _, item in pairs (data.raw["tool"]) do
 	local txt = item.name
 	local recipe = data_util.getRecipe(item.name)
-	if recipe then
+	local icon = item.icon or item.icons[0]
+	if recipe and icon then
 		txt = txt .. ",recipe found"
 		if recipe.category ~= "space-manufacturing" then
 			txt = txt .. ",non-space"
@@ -35,7 +36,6 @@ for _, item in pairs (data.raw["tool"]) do
 				---------------------------------------------------------------------------------------
 				local bulletRecipeName = "se-delivery-cannon-pack-" .. "crate-of-" .. item.name
 				local bulletRecipe = data.raw.recipe[bulletRecipeName]
-				--log("---------------------------------------------------------------------------------------")
 				--log(serpent.block( bulletRecipe, {comment = false, numformat = '%1.8g' } ))
 				if bulletRecipe then
 					bulletRecipe.icon = nil
@@ -105,7 +105,7 @@ for _, item in pairs (data.raw["tool"]) do
 					table.insert(tech.effects,{ type = "unlock-recipe", recipe = unboxRecipe.name})
 					data.raw["technology"][tech.name] = tech
 				else
-					log("tech not found")
+					txt = txt .. "tech not found"
 				end
 			end
 		end
