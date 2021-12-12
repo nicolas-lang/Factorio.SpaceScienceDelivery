@@ -5,7 +5,11 @@ local itemBoxName
 for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
 	local recipe = data_util.getRecipe(item.name)
-	local icon = item.icon or item.icons[0]
+	if item.icons then
+		local icon = item.icons[0]
+	else
+		local icon = item.icon
+	end
 	if recipe and icon then
 		txt = txt .. ",recipe found"
 		if recipe.category ~= "space-manufacturing" then
@@ -112,4 +116,3 @@ for _, item in pairs(data.raw["tool"]) do
 	end
 	log(txt)
 end
-
