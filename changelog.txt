@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+  Bugfixes:
+    - added validation for icon (required) (https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/1)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.3
   Bugfixes:
     - The mod ensure now that a item prototype marked for delivery has a order tag on item, group and subgroup as SE requires this.
