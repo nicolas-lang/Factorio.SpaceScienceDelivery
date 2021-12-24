@@ -7,7 +7,7 @@ for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
 	if item.name ~= "basic-tech-card" then
 		local recipe = data_util.getRecipe(item.name)
-		local icon = nil
+		local icon
 		if item.icons then
 			icon = item.icons[0]
 		else
