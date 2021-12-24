@@ -9,7 +9,7 @@ for _, item in pairs(data.raw["tool"]) do
 		local recipe = data_util.getRecipe(item.name)
 		local icon
 		if item.icons then
-			icon = item.icons[0]
+			icon = item.icons[1]["icon"] or item.icons[1]
 		else
 			icon = item.icon
 		end
@@ -20,7 +20,7 @@ for _, item in pairs(data.raw["tool"]) do
 				newItem = {
 					type = "item",
 					name = "crate-of-" .. item.name,
-					icon = item.icon or item.icons[0],
+					icon = icon,
 					icon_size = item.icon_size,
 					stack_size = 200,
 					subgroup = item.subgroup or "other",
@@ -36,6 +36,10 @@ for _, item in pairs(data.raw["tool"]) do
 				se_delivery_cannon_recipes[newItem.name] = {name = newItem.name, type = "item"}
 			end
 		end
+	else
+		txt = txt .. ",recipe or icon not found"
+		log("icon: " .. serpent.block(icon))
+		log("recipe: " .. serpent.block(recipe))
 	end
 	log(txt)
 end

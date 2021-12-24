@@ -28,9 +28,13 @@ function data_util.getRecipe(item_name)
 		if recipe.result == item_name then
 			return recipe -- take first recipe
 		end
+		if recipe.main_product == item_name then
+			return recipe -- take first recipe
+		end
 		if recipe.results then
 			for _, result in pairs (recipe.results) do
-				if result.name == item_name then
+				local result_name = result["name"] or result[1]
+				if result_name == item_name then
 					return recipe -- take first recipe
 				end
 			end
@@ -42,7 +46,8 @@ function data_util.getRecipe(item_name)
 				end
 				if recipe[subname].results then
 					for _, result in pairs (recipe[subname].results) do
-						if result.name == item_name then
+						local result_name = result["name"] or result[1]
+						if result_name == item_name then
 							return recipe -- take first recipe
 						end
 					end

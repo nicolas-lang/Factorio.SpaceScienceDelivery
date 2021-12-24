@@ -7,7 +7,7 @@ for _, item in pairs(data.raw["tool"]) do
 	local recipe = data_util.getRecipe(item.name)
 	local icon
 	if item.icons then
-		icon = item.icons[0]
+		icon = item.icons[1]["icon"] or item.icons[1]
 	else
 		icon = item.icon
 	end
@@ -17,7 +17,7 @@ for _, item in pairs(data.raw["tool"]) do
 			txt = txt .. ",non-space"
 			itemBoxName = "crate-of-" .. item.name
 			---------------------------------------------------------------------------------------
-			log(item.name .. " --> " .. itemBoxName .. "(" .. (item.icon or item.icons[0]) .. ")")
+			log(item.name .. " --> " .. itemBoxName .. "(" .. (icon) .. ")")
 			local newItem = data.raw.item[itemBoxName]
 			if newItem then
 				txt = txt .. ",box found"
@@ -31,7 +31,7 @@ for _, item in pairs(data.raw["tool"]) do
 					table.insert(newItem.icons, overlayIcon)
 				else
 					local baseIcon = {
-						icon = item.icon,
+						icon = icon,
 						icon_size = item.icon_size
 					}
 					newItem.icons = {baseIcon, overlayIcon}
@@ -114,6 +114,10 @@ for _, item in pairs(data.raw["tool"]) do
 				end
 			end
 		end
+	else
+		txt = txt .. ",recipe or icon not found"
+		log("icon: " .. serpent.block(icon))
+		log("recipe: " .. serpent.block(recipe))
 	end
 	log(txt)
 end
