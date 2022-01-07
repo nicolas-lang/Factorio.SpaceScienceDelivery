@@ -57,6 +57,7 @@ for _, item in pairs(data.raw["tool"]) do
 				boxRecipe.icons = newItem.icons
 				boxRecipe.result = nil
 				boxRecipe.result_count = nil
+				boxRecipe.main_product = itemBoxName
 				local results = {{amount = 1, name = itemBoxName, type = "item"}}
 				local extraIngredient = {type = "item", name = "se-heat-shielding", amount = 1}
 				if boxRecipe.normal then
