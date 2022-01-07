@@ -5,8 +5,8 @@ local data_util = require("data_util")
 local newItem
 for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
-	local icon = nil
-	local recipe = nil
+	local icon
+	local recipe
 	if (item.name ~= "basic-tech-card") and (item.name ~= "singularity-tech-card") then
 		recipe = data_util.getRecipe(item.name)
 		if item.icons then

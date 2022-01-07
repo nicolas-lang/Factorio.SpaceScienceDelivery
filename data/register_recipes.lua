@@ -6,7 +6,7 @@ for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
 	local recipe = data_util.getRecipe(item.name)
 	local category = recipe.category or "none"
-	local txt = category .. ":" .. txt
+	txt = category .. ":" .. txt
 	local icon
 	if item.icons then
 		icon = item.icons[1]["icon"] or item.icons[1]
