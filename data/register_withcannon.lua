@@ -7,7 +7,7 @@ for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
 	local icon = nil
 	local recipe = nil
-	if item.name ~= "basic-tech-card" then
+	if (item.name ~= "basic-tech-card") and (item.name ~= "singularity-tech-card") then
 		recipe = data_util.getRecipe(item.name)
 		if item.icons then
 			icon = item.icons[1]["icon"] or item.icons[1]
@@ -15,8 +15,9 @@ for _, item in pairs(data.raw["tool"]) do
 			icon = item.icon
 		end
 		if recipe and icon then
-			txt = txt .. ",recipe found"
-			if recipe.category ~= "space-manufacturing" then
+			local category = recipe.category or "none"
+			txt = category .. ":" .. txt .. ",recipe found"
+			if (not category:find("space")) and (not category:find("arcosphere")) then
 				txt = txt .. ",non-space"
 				newItem = {
 					type = "item",
@@ -36,11 +37,13 @@ for _, item in pairs(data.raw["tool"]) do
 				data:extend({newItem})
 				se_delivery_cannon_recipes[newItem.name] = {name = newItem.name, type = "item"}
 			end
+		else
+			txt = txt .. ",recipe or icon not found"
+			log("icon: " .. serpent.block(icon))
+			log("recipe: " .. serpent.block(recipe))
 		end
 	else
-		txt = txt .. ",recipe or icon not found"
-		log("icon: " .. serpent.block(icon))
-		log("recipe: " .. serpent.block(recipe))
+		txt = txt .. ", blacklisted"
 	end
 	log(txt)
 end
