@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+  Bugfixes:
+    - Space Exploration Compatibility (https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/3)
+    - K2 Compatibility (https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/4)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
   Bugfixes:
     - added more fixes for icons and recipe processing
