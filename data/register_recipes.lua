@@ -5,8 +5,6 @@ local itemBoxName
 for _, item in pairs(data.raw["tool"]) do
 	local txt = item.name
 	local recipe = data_util.getRecipe(item.name)
-	local category = recipe.category or "none"
-	txt = category .. ":" .. txt
 	local icon
 	if item.icons then
 		icon = item.icons[1]["icon"] or item.icons[1]
@@ -15,6 +13,8 @@ for _, item in pairs(data.raw["tool"]) do
 	end
 	if recipe and icon then
 		txt = txt .. ",recipe found"
+		local category = recipe.category or "none"
+		txt = category .. ":" .. txt
 		if (not category:find("space")) and (not category:find("arcosphere")) then
 			txt = txt .. ",non-space"
 			itemBoxName = "crate-of-" .. item.name
