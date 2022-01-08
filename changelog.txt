@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+  Bugfixes:
+    - Fixed error if a science pack without recipe existed (https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/5)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.6
   Bugfixes:
     - Space Exploration Compatibility (https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/3)
