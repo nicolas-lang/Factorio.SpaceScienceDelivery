@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.9
+  Changes:
+    - Added dependency on Realistic Fusion Power
+    - If 0.0.8 removed recipes for you please open a github issue.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.8
   Changes:
     - Removed unnecessary dependency on se-postprocess

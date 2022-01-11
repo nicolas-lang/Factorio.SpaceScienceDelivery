@@ -1,6 +1,6 @@
 {
 	"name": "nco-SpaceScienceDelivery",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"title": "Space Science Delivery",
 	"author": "Karoschl",
 	"contact": "",
@@ -10,6 +10,7 @@
 	"dependencies": [
 		"base >= 1.1",
 		"space-exploration >= 0.3.82",
-		"(?) Krastorio2 >= 0.9.9"
+		"(?) Krastorio2 >= 0.9.9",
+		"(?) RealisticFusionPower"
 	]
 }
