@@ -105,7 +105,20 @@ for _, item in pairs(data.raw["tool"]) do
 				unboxRecipe.normal = nil
 				unboxRecipe.category = "space-manufacturing"
 				unboxRecipe.icon = nil
-				unboxRecipe.icons = item.icons
+				local unboxOverlayIcon = {
+					icon = "__nco-SpaceScienceDelivery__/graphics/icons/icon_U.png",
+					icon_size = 64
+				}
+				if item.icons then
+					unboxRecipe.icons = util.table.deepcopy(item.icons)
+					table.insert(unboxRecipe.icons, unboxOverlayIcon)
+				else
+					local baseIcon = {
+						icon = icon,
+						icon_size = item.icon_size
+					}
+					unboxRecipe.icons = {baseIcon, unboxOverlayIcon}
+				end
 				data:extend({unboxRecipe})
 				local tech = data_util.getTechnologyForRecipe(recipe.name)
 				if tech then
