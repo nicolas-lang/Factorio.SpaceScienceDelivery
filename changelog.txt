@@ -1,8 +1,12 @@
+Version: 0.0.10
+  Bugfixes:
+    - Fixed https://github.com/nicolas-lang/Factorio.SpaceScienceDelivery/issues/7
+  Changes:
+    - If recent versions removed recipes for you please open a github issue.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.9
   Changes:
     - Added dependency on Realistic Fusion Power
-    - If 0.0.8 removed recipes for you please open a github issue.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.8
   Changes:
